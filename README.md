@@ -1,4 +1,4 @@
-<p align="center"><a target="_blank" href="https://github.com/kit-box"><img src="https://user-images.githubusercontent.com/118080144/201520966-830879c3-5e7a-4a80-8c96-b20a21de4a05.jpg" / width="300"></a></p>
+<p><a target="_blank" href="https://github.com/kit-box"><img src="https://user-images.githubusercontent.com/118080144/201520966-830879c3-5e7a-4a80-8c96-b20a21de4a05.jpg" / width="300"></a></p>
 
 # KitBox - Laravel File Uploader
 
@@ -29,7 +29,7 @@ php artisan vendor:publish --provider="KitBox\FileUploader\FileUploaderServicePr
 ```
 
 ## Authors
-....
+[@simael](https://github.com/simaelw/simaelw)
 
 ## Version History
 
@@ -38,4 +38,4 @@ php artisan vendor:publish --provider="KitBox\FileUploader\FileUploaderServicePr
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [License File](LICENSE.md) for details
