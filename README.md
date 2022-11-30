@@ -25,13 +25,13 @@ composer require kit-box/laravel-fileuploader
 Next, you should publish the migrations.
 
 ```php
-php artisan vendor:publish --provider="KitBox\FileUploader\FileUploaderServiceProvider" --tags="migrations"
+php artisan vendor:publish --provider="KitBox\FileUploader\FileUploaderServiceProvider" --tag="migrations"
 ```
 
 Optionally, you can publish the config file.
 
 ```php
-php artisan vendor:publish --provider="KitBox\FileUploader\FileUploaderServiceProvider" --tags="config"
+php artisan vendor:publish --provider="KitBox\FileUploader\FileUploaderServiceProvider" --tag="config"
 ```
 
 Base config file:
