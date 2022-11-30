@@ -2,6 +2,7 @@
 
 # KitBox - Laravel File Uploader
 
+[![php](https://img.shields.io/packagist/dependency-v/kit-box/laravel-fileuploader/php)](https://packagist.org/packages/kit-box/laravel-fileuploader)
 [![Downloads](https://img.shields.io/packagist/dt/kit-box/laravel-fileuploader)](https://packagist.org/packages/kit-box/laravel-fileuploader)
 [![Stars](https://img.shields.io/github/stars/kit-box/laravel-fileuploader)](https://github.com/kit-box/laravel-fileuploader/stargazers)
 [![Issues](https://img.shields.io/github/issues/kit-box/laravel-fileuploader)](https://github.com/kit-box/laravel-fileuploader/issues)
