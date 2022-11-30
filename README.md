@@ -138,7 +138,6 @@ $banner = $article->getFile('banner'); //Getting first specific labeled file
 ```
 
 Retrieving files responses:
-You can retrieve file responses simply doing this
 
 ```php
 $banner = $article->getFile('banner');
