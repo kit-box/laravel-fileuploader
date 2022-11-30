@@ -137,13 +137,27 @@ $first_file = $article->getFile(); //Getting first file
 $banner = $article->getFile('banner'); //Getting first specific labeled file
 ```
 
+Retrieving files responses:
+You can retrieve file responses simply doing this
+
+```php
+$banner = $article->getFile('banner');
+return $banner->response();
+```
+
+Or going for direct download:
+
+```php
+return $banner->download();
+```
+
 #### Delete Files
 
 Deleting files:
 
 ```php
 $article->deleteFiles(); //Deleting all files
-$banner = $article->deleteFiles('archive_photos'); //Deleting labeled files
+$article->deleteFiles('archive_photos'); //Deleting labeled files
 ```
 
 Deleting files on model delete:
