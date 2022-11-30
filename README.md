@@ -175,7 +175,7 @@ php artisan files:clear "App\Models\Article" "archive_photos"
 ```
 
 ## Authors
-[@simael](https://github.com/simaelw/simaelw)
+[@simaelw](https://github.com/simaelw/simaelw)
 
 ## Version History
 
