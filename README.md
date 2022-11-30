@@ -2,8 +2,10 @@
 
 # KitBox - Laravel File Uploader
 
-[![Downloads](https://img.shields.io/packagist/dt/kit-box/laravel-fileuploader?style=for-the-badge)](https://packagist.org/packages/kit-box/laravel-fileuploader)
-[![License](https://img.shields.io/github/license/kit-box/laravel-fileuploader?style=for-the-badge)](https://github.com/kit-box/laravel-fileuploader/blob/main/LICENSE.md)
+[![Downloads](https://img.shields.io/packagist/dt/kit-box/laravel-fileuploader)](https://packagist.org/packages/kit-box/laravel-fileuploader)
+[![Stars](https://img.shields.io/github/stars/kit-box/laravel-fileuploader)](https://github.com/kit-box/laravel-fileuploader/stargazers)
+[![Issues](https://img.shields.io/github/issues/kit-box/laravel-fileuploader)](https://github.com/kit-box/laravel-fileuploader/issues)
+[![License](https://img.shields.io/github/license/kit-box/laravel-fileuploader)](https://github.com/kit-box/laravel-fileuploader/blob/main/LICENSE.md)
 
 A simple uploader for files associated with Models.
 
