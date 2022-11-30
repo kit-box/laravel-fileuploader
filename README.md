@@ -194,7 +194,7 @@ php artisan files:clear "App\Models\Article" "archive_photos"
 
 ## Version History
 
-* 1.0.0
+* 1.0.1
     * Initial Release
 
 ## License
