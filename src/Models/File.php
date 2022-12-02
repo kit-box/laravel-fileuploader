@@ -20,14 +20,14 @@ class File extends Model
 
     public static function booted()
     {
-        static::deleted(function (Model $model) {
-            if (in_array(SoftDeletes::class, class_uses_recursive($model))) {
-                if (!$model->isForceDeleting()) {
+        static::deleted(function ($file) {
+            if (in_array(SoftDeletes::class, class_uses_recursive($file))) {
+                if (!$file->isForceDeleting()) {
                     return;
                 }
             }
 
-            Storage::disk($model->disk)->delete($model->path);
+            Storage::disk($file->disk)->delete($file->path);
         });
     }
 
