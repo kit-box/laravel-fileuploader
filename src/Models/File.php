@@ -2,20 +2,14 @@
 
 namespace KitBox\FileUploader\Models;
 
-use Http\Client\Exception\HttpException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use KitBox\FileUploader\Traits\PreventsModelEvents;
 
 class File extends Model
 {
-    use PreventsModelEvents;
-
-    protected static $prevents = ['updating'];
-
     protected $appends = ['full_path', 'path'];
 
     public static function booted()
