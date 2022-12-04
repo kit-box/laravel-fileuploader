@@ -45,21 +45,21 @@ trait HasFiles
         return $this->delete_with_files === false;
     }
 
-    public function preserveFiles()
+    public function preserveFiles(): self
     {
         $this->delete_with_files = false;
 
         return $this;
     }
 
-    public function setFileLabel(string $label)
+    public function setFileLabel(string $label): self
     {
         $this->label = $label;
 
         return $this;
     }
 
-    public function upload(string $field, ?string $folder = null, ?string $disk = null)
+    public function upload(string $field, ?string $folder = null, ?string $disk = null): Collection|File
     {
         return app(FileUploader::class)
             ->setModel($this->files())
