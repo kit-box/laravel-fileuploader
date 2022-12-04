@@ -153,6 +153,37 @@ Or going for direct download:
 return $banner->download();
 ```
 
+#### Update Files
+
+It's possible to update the label if needed using these methods:
+
+```php
+$banner = $article->getFile('banner');
+$banner->setLabel('archive_photos');
+```
+
+Massive label update:
+
+```php
+$article->updateFilesLabel(
+    old: 'archive_photos', 
+    new: 'photo_gallery'
+);
+```
+
+Or remove the label:
+```php
+$banner->removeLabel();
+```
+
+Massive label removal:
+
+```php
+$article->removeFilesLabel('archive_photos');
+```
+
+Note: Passing empty strings as label will prevent method executions
+
 #### Delete Files
 
 Deleting files:

@@ -2,7 +2,6 @@
 
 namespace KitBox\FileUploader\Helpers;
 
-use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;

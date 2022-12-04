@@ -2,19 +2,15 @@
 
 namespace KitBox\FileUploader\Models;
 
-use Http\Client\Exception\HttpException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use KitBox\FileUploader\Traits\PreventsModelEvents;
 
 class File extends Model
 {
-    use PreventsModelEvents;
-
-    protected static $prevents = ['updating'];
+    protected $fillable = ['label'];
 
     protected $appends = ['full_path', 'path'];
 
@@ -81,5 +77,19 @@ class File extends Model
         if (!Storage::disk($this->disk)->exists($this->path)) {
             abort(404);
         }
+    }
+
+    public function setLabel(string $label): bool
+    {
+        if (strlen($label) === 0) {
+            return false;
+        }
+
+        return $this->update(['label' => $label]);
+    }
+
+    public function removeLabel(): bool
+    {
+        return $this->update(['label' => null]);
     }
 }

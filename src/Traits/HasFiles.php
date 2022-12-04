@@ -54,26 +54,32 @@ trait HasFiles
 
     public function setFileLabel(string $label): self
     {
-        $this->label = $label;
+        if (strlen($label) !== 0) {
+            $this->label = $label;
+        }
 
         return $this;
     }
 
     public function upload(string $field, ?string $folder = null, ?string $disk = null): Collection|File
     {
-        return app(FileUploader::class)
+        $uploads = app(FileUploader::class)
             ->setModel($this->files())
             ->setLabel($this->label)
             ->setFolder($folder ?: config('file-uploader.base_folder'))
             ->setDisk($disk ?: config('file-uploader.disk'))
             ->upload($field);
+
+        $this->label = null;
+
+        return $uploads;
     }
 
     private function prepareQuery(?string $label = null): MorphMany
     {
         $query = $this->files();
 
-        if ($label) {
+        if ($label && strlen($label) !== 0) {
             $query = $query->labeled($label);
         }
 
@@ -82,7 +88,6 @@ trait HasFiles
 
     public function getFiles(?string $label = null): Collection
     {
-
         return $this->prepareQuery($label)->get();
     }
 
@@ -94,6 +99,26 @@ trait HasFiles
     public function deleteFiles(?string $label = null): bool
     {
         $this->prepareQuery($label)->cursor()->each(fn (File $file) => $file->delete());
+        return true;
+    }
+
+    public function updateFilesLabel(string $old, string $new): bool
+    {
+        if (strlen($old) === 0 || strlen($new) === 0) {
+            return false;
+        }
+
+        $this->prepareQuery($old)->cursor()->each(fn (File $file) => $file->setLabel($new));
+        return true;
+    }
+
+    public function removeFilesLabel(string $label): bool
+    {
+        if (strlen($label) === 0) {
+            return false;
+        }
+
+        $this->prepareQuery($label)->cursor()->each(fn (File $file) => $file->removeLabel());
         return true;
     }
 }
