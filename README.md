@@ -182,6 +182,8 @@ Massive label removal:
 $article->removeFilesLabel('archive_photos');
 ```
 
+Note: Passing empty strings as label will prevent method executions
+
 #### Delete Files
 
 Deleting files:
