@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class File extends Model
 {
+    protected $fillable = ['label'];
+
     protected $appends = ['full_path', 'path'];
 
     public static function booted()
@@ -75,5 +77,19 @@ class File extends Model
         if (!Storage::disk($this->disk)->exists($this->path)) {
             abort(404);
         }
+    }
+
+    public function setLabel(string $label): bool
+    {
+        if (strlen($label) === 0) {
+            return false;
+        }
+
+        return $this->update(['label' => $label]);
+    }
+
+    public function removeLabel(): bool
+    {
+        return $this->update(['label' => null]);
     }
 }
