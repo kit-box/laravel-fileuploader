@@ -54,7 +54,9 @@ trait HasFiles
 
     public function setFileLabel(string $label): self
     {
-        $this->label = $label;
+        if (strlen($label) !== 0) {
+            $this->label = $label;
+        }
 
         return $this;
     }
