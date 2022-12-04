@@ -48,7 +48,7 @@ class FileUploader
         $file->storeAs($this->folder, $filename, $this->disk);
 
         if (!Storage::disk($this->disk)->exists($this->folder . '/' . $filename)) {
-            return new \ErrorException("Something wrong with upload");
+            throw new \ErrorException("Something wrong with upload");
         }
 
         return $this->model->forceCreate([
