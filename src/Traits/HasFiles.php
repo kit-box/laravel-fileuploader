@@ -61,12 +61,16 @@ trait HasFiles
 
     public function upload(string $field, ?string $folder = null, ?string $disk = null): Collection|File
     {
-        return app(FileUploader::class)
+        $uploads = app(FileUploader::class)
             ->setModel($this->files())
             ->setLabel($this->label)
             ->setFolder($folder ?: config('file-uploader.base_folder'))
             ->setDisk($disk ?: config('file-uploader.disk'))
             ->upload($field);
+
+        $this->label = null;
+
+        return $uploads;
     }
 
     private function prepareQuery(?string $label = null): MorphMany
